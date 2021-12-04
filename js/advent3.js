@@ -1,5 +1,6 @@
 window.onload = () => {
-
+    console.log("Hi friend");
+    
     function letterIsValid(letter) {
         if (letter.includes("(") && letter.includes(")")) {
             const openedParentesis = letter.indexOf("(");

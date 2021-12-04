@@ -6,11 +6,10 @@ window.onload = () => {
     function listGifts(letter) {
         const regalos = {}
 
-        // Elimino los espacios
+        // Clear white spaces
         letter = letter.trim().split(/\s+/);
-        console.log(letter);
         
-        // Agrego los regalos al objeto
+        // Add gifts to the basket
         letter.forEach(element => {
             if (regalos[element]) { regalos[element] ++ }
 
