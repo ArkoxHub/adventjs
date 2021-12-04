@@ -6,9 +6,15 @@ window.onload = () => {
             const closedParentesis = letter.indexOf(")");
             
             if (openedParentesis < closedParentesis) {
-                const wordInsideParentesis = letter.substring(openedParentesis + 1, closedParentesis);
+                const wordsInsideParentesis = letter.substring(openedParentesis + 1, closedParentesis);
+
+                if (wordsInsideParentesis.length > 0 && wordsInsideParentesis.includes("(") || wordsInsideParentesis.includes(")")) {
+                    letterIsValid(wordsInsideParentesis);
+                    return false;
+                }
+
                 // check if the word inside parentesis has letters inside
-                if (wordInsideParentesis.length === 0 || wordInsideParentesis.includes("{") || wordInsideParentesis.includes("[")) {
+                if (wordsInsideParentesis.length === 0 || wordsInsideParentesis.includes("{") || wordsInsideParentesis.includes("[")) {
                     return false;
                 }
                 return true;
