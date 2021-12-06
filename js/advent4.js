@@ -11,6 +11,11 @@ window.onload = () => {
         const maxWidth = height * 2 - 1;
         const midWidth = maxWidth / 2;
 
+        if (height < 1 || height > 100) {
+            alert("El árbol tiene que tener una altura mínima de 1 y máximo de 100")
+            return false;
+        }
+
         // Build the tree
         for (let i = 0; i < height; i++) {
             const spaces = backfill.repeat(midWidth - i);
@@ -26,5 +31,5 @@ window.onload = () => {
         return tree.slice(0, -1);
     }
 
-    console.log(createXmasTree(3));
+    console.log(createXmasTree(5));
 }
